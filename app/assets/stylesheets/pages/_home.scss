@@ -4,4 +4,48 @@ h1 {
   font-family: $headers-font;
 }
 
+.grid-top-last {
+  margin-top: 80px;
+  text-align: center;
+  width : 70%;	
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 200px 200px 200px 200px 200px;
+  margin-bottom: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cells {
+	margin: 8px;
+	background: $navbar;
+	color: white;
+	box-shadow: 0 8px 6px -6px black;
+}
+
+.fire {
+	padding-top: 8px;
+	font-size: 30px;
+	font-family: $headers-font;
+}
+
+
+.cells-one {
+	margin: 8px;
+	background: $navbar;
+	color: white;
+	box-shadow: 0 8px 6px -6px black;
+	border-radius: 50px 0px 0px 0px;
+	padding-top: 3px;
+}
+
+.cells-two {
+	margin: 8px;
+	background: $navbar;
+	color: white;
+	box-shadow: 0 8px 6px -6px black;
+	border-radius: 0px 50px 0px 0px;
+	padding-top: 3px;
+}
+
 
