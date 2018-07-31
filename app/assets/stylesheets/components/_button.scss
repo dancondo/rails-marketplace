@@ -1,0 +1,23 @@
+.btn-banner {
+  color: $black;
+  padding: 15px 15px;
+  border-radius: 15px;
+  border-style: solid;
+  font-weight: bold;
+  font-size: 20px;
+  background: #666666;
+}
+
+#btn-comprar:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
+
+#btn-vender:hover {
+  opacity: 1;
+  background: #ff3333;
+  text-decoration: none;
+  color: white;
+}
