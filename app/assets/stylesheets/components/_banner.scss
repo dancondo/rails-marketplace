@@ -60,7 +60,12 @@
 }
 
 #span {
-  color: #ff6600;
+  color: $laranja;
+  font-weight: 700;
+}
+
+.welcome-title {
+  font-weight: 300 ;
 }
 
 
