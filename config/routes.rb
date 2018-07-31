@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'orders/index'
+  get 'orders/show'
+  get 'orders/create'
+  get 'orders/index'
+  get 'orders/show'
+  get 'orders/new'
   resources :posts
   devise_for :users
   resources :users, only: :show
