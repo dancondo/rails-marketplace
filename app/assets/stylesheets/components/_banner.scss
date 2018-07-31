@@ -1,5 +1,8 @@
+a {
+  color:white !important;
+}
+
 .banner {
-  // color: white;
   text-align: center;
   height: 50vh;
   background-size: cover !important;
@@ -28,39 +31,6 @@
   margin-top: 20px;
 }
 
-.btn-comprar {
-  color: $black;
-  padding: 15px 15px;
-  border-radius: 15px;
-  font-weight: bold;
-  font-size: 20px;
-  background: #deeaee;
-}
-
-.btn-comprar:hover {
-  opacity: 1;
-  background: #3ac162;
-  text-decoration: none;
-  color: white;
-}
-
-.btn-vender {
-  color: $black;
-  padding: 15px 15px;
-  border-radius: 15px;
-  font-weight: bold;
-  font-size: 20px;
-  background: #deeaee;
-}
-.btn-vender:hover {
-  opacity: 1;
-  background: #ff3333;
-  text-decoration: none;
-  color: white;
-}
-
 #span {
   color: #ff6600;
 }
-
-
