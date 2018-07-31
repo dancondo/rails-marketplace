@@ -9,17 +9,19 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @post = Post.find(params[:post_id])
     @order.user = current_user
+    @order.post = @post
     if @order.save
       redirect_to @order
     else
-      redirect_to posts_url
+      render 'posts/show'
     end
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:amount, :order_id, :user_id)
+    params.require(:order).permit(:amount, :post_id, :user_id)
   end
 end
