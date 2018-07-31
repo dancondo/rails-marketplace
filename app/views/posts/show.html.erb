@@ -9,4 +9,6 @@
 
 <% if policy(@post).update? %>
   <%= link_to "Update", edit_post_url %>
+<% else %>
+  <%= link_to "Buy" %>
 <% end %>
