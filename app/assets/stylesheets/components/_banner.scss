@@ -31,6 +31,44 @@ a {
   margin-top: 20px;
 }
 
+.btn-comprar {
+  color: $black;
+  padding: 15px 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  background: #deeaee;
+//   box-shadow: 0 8px 6px -6px black;
+}
+
+.btn-comprar:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+//   color: white;
+}
+
+.btn-vender {
+  color: $black;
+  padding: 15px 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  background: #deeaee;
+//   box-shadow: 0 8px 6px -6px black;
+}
+.btn-vender:hover {
+  opacity: 1;
+  background: #ff3333;
+  text-decoration: none;
+//   color: white;
+}
+
 #span {
-  color: #ff6600;
+  color: $laranja;
+  font-weight: 700;
+}
+
+.welcome-title {
+  font-weight: 300 ;
 }
