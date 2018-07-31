@@ -11,4 +11,5 @@
   <%= link_to "Update", edit_post_url %>
 <% else %>
   <%= link_to "Buy" %>
+  <%= render 'orders/form', order: @order, post: @post %>
 <% end %>

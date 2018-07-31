@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'orders/index'
-  get 'orders/show'
-  get 'orders/create'
-  resources :posts
+  resources :posts do
+    resources :orders, only: [:index, :show, :create]
+  end
   devise_for :users
   resources :users, only: :show
   root to: 'pages#home'
