@@ -1,5 +1,12 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
-<%= link_to "Delete", @post,
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
+
+<% if policy(@post).destroy? %>
+  <%= link_to "Delete", @post,
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<% end %>
+
+<% if policy(@post).update? %>
+  <%= link_to "Update", edit_post_url %>
+<% end %>
