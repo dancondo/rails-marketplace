@@ -30,11 +30,11 @@
       <li class="nav-item">
         <% if user_signed_in? %>
           <%= link_to current_user, class: "nav-link" do %>
-            <i class="far fa-user"></i> <%= current_user.username %>
+            <i class="fas fa-user"></i> <%= current_user.username %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path, class: "nav-link" do %>
-            <i class="far fa-user"></i> Login
+            <i class="fas fa-user"></i> Login
           <% end %>
         <% end %>
       </li>
@@ -42,7 +42,7 @@
       <li class="nav-item">
         <% if user_signed_in? %>
           <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-            <i class="far fa-user"></i> Logout
+            <i class="fas fa-sign-out-alt"></i> Logout
           <% end %>
         <% else %>
           <%= link_to new_user_registration_path, class: "nav-link" do %>
