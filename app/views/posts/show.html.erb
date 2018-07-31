@@ -6,3 +6,7 @@
             method: :delete,
             data: { confirm: "Are you sure?" } %>
 <% end %>
+
+<% if policy(@post).update? %>
+  <%= link_to "Update", edit_post_url %>
+<% end %>

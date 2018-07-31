@@ -9,7 +9,11 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    user
+    user != nil
+  end
+
+  def update?
+    record.user == user
   end
 
   def destroy?

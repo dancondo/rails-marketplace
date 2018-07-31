@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_post, only: [:show, :edit, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:create, :new, :edit, :update]
 
 
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def update
     authorize @post
-    if @post.update
+    if @post.update(post_params)
       redirect_to @post
     else
       render :new
