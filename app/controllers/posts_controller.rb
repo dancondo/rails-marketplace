@@ -29,6 +29,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    authorize @post
     if @post.update
       redirect_to @post
     else
