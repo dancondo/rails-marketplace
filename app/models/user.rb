@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates :username, presence: true, uniqueness: true, allow_blank: false
   validate :check_cpf
+  has_many :orders
+  has_many :posts
 
   def check_cpf
     return errors.add(:cpf, "is not a valid CPF") if cpf.nil?

@@ -1,2 +1,18 @@
 <h1>Orders#show</h1>
 <p>Find me in app/views/orders/show.html.erb</p>
+<ul>
+  <li>Quantidade: R$<%= @order.amount %></li>
+  <li>Moeda: <%= @order.post.currency.name %></li>
+  <li>Agil: <%= @order.post.ease %>%</li>
+  <li>Total: R$<%= @order.amount * (100 + @order.post.ease) / 100  %></li>
+  <li><%= link_to 'Anuncio', @order.post %></li>
+  <li><%= @order.status %></li>
+</ul>
+<%= link_to 'Cancel Order', @order,
+            method: :delete,
+            data: { confirm: "Cancelar essa order?" } %>
+<% if policy(@order).update? %>
+  <%= link_to 'Confirmar', @order,
+            method: :patch,
+            data: { confirm: "Essa ordem foi completa?" } %>
+<% end %>
