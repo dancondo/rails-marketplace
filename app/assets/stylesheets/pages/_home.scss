@@ -34,8 +34,8 @@ h1 {
 	background: $navbar;
 	color: white;
 	box-shadow: 0 8px 6px -6px black;
-	border-radius: 50px 0px 0px 0px;
-	padding-top: 3px;
+	border-radius: 50px 50px 0px 0px;
+	padding: 8px;
 }
 
 .cells-two {
@@ -63,6 +63,10 @@ h1 {
 	height: 183px;
 	box-shadow: 0 8px 6px -6px black;
 }
-
-
-
+.table-home {
+  margin-bottom: 80px;
+  border: none !important;
+  tr {
+    border: none !important;
+  }
+}

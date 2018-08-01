@@ -29,28 +29,21 @@
 
 <div class="grid-top-last">
 
-	<div class="cells-one"><div class="fire"><%= image_tag "fire-logo.png", alt: "fire", width: 65 %></i> ÚLTIMOS ANÚNCIOS</div>
+  <h3 class="cells-one">ÚLTIMOS ANÚNCIOS</h3>
+
+  <table class="table table-hover table-home">
+    <tbody>
+      <% @posts.each_with_index do |post, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= post.user.username %></td>
+          <td><%= post.currency.name %></td>
+          <td><%= post.amount %></td>
+          <td><%= post.ease %>%</td>
+          <td><%= link_to 'Comprar', post %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 </div>
-
-<table class="table table-hover">
-  <tbody>
-    <% @posts.each_with_index do |post, index| %>
-      <tr>
-        <th scope="row"><%= index + 1 %></th>
-        <td><%= post.user.username %></td>
-        <td><%= post.currency.name %></td>
-        <td><%= post.amount %></td>
-        <td><%= post.ease %>%</td>
-        <td><%= link_to 'Comprar', post %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<!--   <div class="cells-two"><div class="fire"><%= image_tag "star-logo.png", alt: "star", width: 65 %></i> TOP VENDEDORES</div></div>
-<div class="cells">One top</div>
-<div class="cells">Two top</div>
-<div class="cells">Three top</div>
-<div class="cells">Four top</div>
-<div class="cells">Five top</div>
-</div> -->

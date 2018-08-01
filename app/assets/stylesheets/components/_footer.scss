@@ -2,6 +2,9 @@
 	background: $navbar;
 	color: $card-background;
 	padding-top: 16px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-links {
@@ -37,7 +40,7 @@ hr {
 	margin-left: auto;
 }
 
-.fab { 
+.fab {
 	padding-left: 8px;
 }
 
