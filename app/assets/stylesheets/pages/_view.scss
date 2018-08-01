@@ -1,0 +1,177 @@
+.card-container {
+	background: $navbar;
+	box-shadow: 0 8px 6px -6px black;
+	margin-bottom: 40px;
+	margin-top: 40px;
+	width : 80%;
+}
+
+
+.grid-post {
+  margin-top: 80px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  margin-bottom: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-profil {
+	display: grid;
+	grid-template-columns: 1.5fr 0.6fr 0.7fr 0.7fr;
+	grid-template-rows: 100px;
+	background: $navbar;
+	
+}
+
+.grid-sale {
+	display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100px;
+    background: $navbar;
+
+}
+
+.grid-thumb {
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 50px;
+}
+
+
+
+.cells-post-grid-profil {
+	display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    grid-template-rows: 100%;
+    background: $card-background;
+    padding: 8px;
+	margin: 8px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.cells-grid-exchange {
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    text-align: center;
+    align-items: center;
+	justify-content: center;
+}
+
+.cells-grid-exchange-numero {
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+.cells-grid-star {
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    text-align: center;
+}
+
+.cells-grid-comprar {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr ;
+    grid-template-rows: 70% 30%;
+    text-align: center;
+    background: $card-background;
+    padding: 8px;
+	margin: 8px;
+	align-items: center;
+	justify-content: center;
+}
+
+.cells-grid-time {
+	display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 100%;
+    text-align: center;
+    background: $card-background;
+    padding: 8px;
+	margin: 8px;
+    font-size: 20px;
+}
+
+.cells-grid-star-numero {
+	font-size: 30px;
+	font-weight: bolder;
+	align-items: center;
+	justify-content: center;
+}
+
+.cells-post{
+	background: $card-background;
+	padding: 8px;
+	margin: 8px 8px 8px 8px;
+	font-size: 20px;
+}
+
+.cells-post-badge {
+	background: $card-background;
+	padding: 8px;
+	margin: 8px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cells-post-star-exchange {
+	background: $card-background;
+	padding: 8px;
+	margin: 8px;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.cells-grid-time-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cells-grid-time-counter {
+		display: flex;
+	    align-items: center;
+	    justify-content: center;
+}
+
+.cells-grid-post {
+	background: $navbar;
+}
+
+.cells-grid-perfil-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cells-grid-perfil-nome {
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+}
+
+.list-inline {
+	font-size: 20px;
+}
+
+.far {
+	font-size: 40px;
+}
+
+.fa-clock {
+	font-size: 45px;
+}
+
+.fa-sync {
+	font-size: 35px;
+}

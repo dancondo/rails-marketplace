@@ -1,17 +1,16 @@
 <h1>Here are the best Cryto's offers on Internet</h1>
 
-
-<ol>
-  <% @posts.each do |post| %>
+  <ol>
+    <% @posts.each do |post| %>
     <%= link_to post do %>
-      <li>
-        <%= post.user.username %>
-        <%= post.currency.name %>
-        <%= post.amount %>
-        <%= post.ease %>
-      </li>
+    <li>
+      <%= post.user.username %>
+      <%= post.currency.name %>
+      <%= post.amount %>
+      <%= post.ease %>
+    </li>
     <% end %>
-  <% end %>
-</ol>
+    <% end %>
+  </ol>
 
-<%= link_to "new", new_post_path %>
+  <%= link_to "new", new_post_path %>
