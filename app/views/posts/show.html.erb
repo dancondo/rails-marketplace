@@ -1,12 +1,57 @@
 <% if policy(@post).destroy? %>
-  <%= link_to "Delete", @post,
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+<%= link_to "Delete", @post,
+method: :delete,
+data: { confirm: "Are you sure?" } %>
 <% end %>
 
 <% if policy(@post).update? %>
-  <%= link_to "Update", edit_post_url %>
+<%= link_to "Update", edit_post_url %>
 <% else %>
+
+<%= link_to "Buy" %>
+<%= render 'orders/form', order: @order, post: @post %>
+
   <h4>Amount: <%= @post.amount %></h4>
   <%= render 'orders/form', order: @order, post: @post %>
 <% end %>
+
+<div class="card-container">
+
+	<div clas="grid-post">
+		<div class="cells-grid-post">
+			<div class="grid-profil">
+				<div class="cells-post-grid-profil">
+					<div class="cells-grid-perfil-nome"> nome </div>
+					<div class="cells-grid-perfil-button"><button type="button" class="btn btn-primary">Ver perfil</button></div>
+				</div>	
+				<div class="cells-post-badge"><%= image_tag "medal-gold.png", alt: "star", width: 65 %></div>
+				<div class="cells-post-star-exchange">
+					<div class="cells-grid-star">
+						<div class="cells-grid-star-logo"> <i class="far fa-star"></i></div>
+						<div class="cells-grid-star-numero"> 1 </div>
+					</div>
+				</div>
+				<div class="cells-post-star-exchange">
+					<div class="cells-grid-exchange">
+						<div class="cells-grid-exchange-logo"> <i class="fas fa-sync"></i></div>
+						<div class="cells-grid-exchange-numero"> 3 </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cells-grid-post">
+		<div class="grid-sale">
+			<div class="cells-grid-time">
+				<div class="cells-grid-time-button"><i class="far fa-clock"></i></div>
+				<div class="cells-grid-time-counter"> 1:00:59 </div>
+			</div>
+
+			<div class="cells-grid-comprar">
+				<div class="cells-grid-comprar-values"> (X BTC) >> (XX ETH) </div>
+				<div class="cells-grid-comprar-button"><button type="button" class="btn btn-success">Comprar</button></div>
+				<div class="cells-grid-comprar-eases"> EASE </div>
+			</div>
+		</div>
+	</div>
+</div>
