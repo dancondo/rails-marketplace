@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :orders, only: [:create]
   end
-  resources :orders, only: [:show, :index]
+  resources :orders, only: [:show, :index, :destroy]
   devise_for :users
   resources :users, only: :show
   root to: 'pages#home'

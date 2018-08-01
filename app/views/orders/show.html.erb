@@ -4,7 +4,16 @@
   <li>Quantidade: R$<%= @order.amount %></li>
   <li>Moeda: <%= @order.post.currency.name %></li>
   <li>Agil: <%= @order.post.ease %>%</li>
-  <li>Total: R$<%= @order.amount %></li>
+  <li>Total: R$<%= @order.amount * (100 + @order.post.ease) / 100  %></li>
   <li><%= link_to 'Anuncio', @order.post %></li>
-  <li><%= @order.amount %></li>
+  <li><%= @order.status %></li>
 </ul>
+<%= link_to 'Cancel Order', @order,
+            method: :delete,
+            data: { confirm: "Cancel this order?" } %>
+<%# if policy(@post).update? %>
+  <%#= link_to "Update", edit_post_url %>
+<%# else %>
+  <h4>Amount: <%#= @post.amount %></h4>
+  <%#= render 'orders/form', order: @order, post: @post %>
+<%# end %>

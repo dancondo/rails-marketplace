@@ -5,10 +5,28 @@
 <%= @user.cpf %>
 <br>
 <ul>
+  Suas Ordens de Compra:
   <% @user.orders.each do |o| %>
     <li>
       <%= link_to o do %>
         Quantidade: $<%= o.amount %> | Agil: <%= o.post.ease %>% | Total <%= o.amount * (100 + o.post.ease) / 100.0  %></li>
       <% end %>
+  <% end %>
+</ul>
+<ul>
+  Suas Ordens de Venda:
+  <% @user.posts.each do |post| %>
+    <%= link_to post do %>
+      <%= post.amount %> de <%= post.currency.name %> por <%= post.ease %>% de Agil
+    <% end %>
+
+
+
+    <% post.orders.each do |post_order| %>
+    <li>
+      <%= link_to post_order do %>
+        Quantidade: $<%= post_order.amount %> | Agil: <%= post_order.post.ease %>% | Total <%= post_order.amount * (100 + post_order.post.ease) / 100.0  %></li>
+      <% end %>
+    <% end %>
   <% end %>
 </ul>
