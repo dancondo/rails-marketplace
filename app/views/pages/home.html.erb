@@ -29,16 +29,19 @@
 <div class="grid-top-last">
 
 	<div class="cells-one"><div class="fire"><%= image_tag "fire-logo.png", alt: "fire", width: 65 %></i> ÚLTIMOS ANÚNCIOS</div></div>
-	<div class="cells-two"><div class="fire"><%= image_tag "star-logo.png", alt: "star", width: 65 %></i> TOP VENDEDORES</div></div>
-	<div class="cells">One top</div>
-	<div class="cells">One last</div>
-	<div class="cells">Two top</div>
-	<div class="cells">Two last</div>
-	<div class="cells">Three top</div>
-	<div class="cells">Three last</div>
-	<div class="cells">Four top</div>
-	<div class="cells">Four last</div>
-	<div class="cells">Five top</div>
-	<div class="cells">Five last</div>
-
+  <div class="cells">
+    <% @posts.each do |post| %>
+      <%= post.user.username %>
+      <%= post.amount %>
+      <%= post.ease %>
+      <%= post.currency.name %>
+    <% end %>
+  </div>
 </div>
+<!--   <div class="cells-two"><div class="fire"><%= image_tag "star-logo.png", alt: "star", width: 65 %></i> TOP VENDEDORES</div></div>
+<div class="cells">One top</div>
+<div class="cells">Two top</div>
+<div class="cells">Three top</div>
+<div class="cells">Four top</div>
+<div class="cells">Five top</div>
+</div> -->
