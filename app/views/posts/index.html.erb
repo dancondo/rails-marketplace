@@ -2,7 +2,7 @@
 
 <table class="table table-hover">
   <thead>
-    <tr>
+    <tr id="table-head">
       <th scope="col">#</th>
       <th scope="col">Username</th>
       <th scope="col">Cryptocurrency</th>
@@ -11,9 +11,9 @@
     </tr>
   </thead>
   <tbody>
-    <% @posts.each do |post| %>
+    <% @posts.each_with_index do |post, index| %>
       <tr>
-        <th scope="row"><%= post.id %></th>
+        <th scope="row"><%= index + 1 %></th>
         <td><%= post.user.username %></td>
         <td><%= post.currency.name %></td>
         <td><%= post.amount %></td>
