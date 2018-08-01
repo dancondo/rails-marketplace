@@ -3,16 +3,18 @@ th {
 }
 
 tr {
-  border: 2px solid gray;
+  border: 2px solid lightgray;
 }
 
 .table {
   background-color: #233142;
   border-radius: 5px;
   color:white;
-  border: 2px solid gray;
 }
 
-#table-head {
+thead tr {
   border: 2px solid $laranja;
+}
+tbody tr:first-child {
+  border-top: 2px solid $laranja;
 }
