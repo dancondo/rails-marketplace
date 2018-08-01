@@ -10,6 +10,6 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def update?
-    record.post.user == user
+    record.user == user
   end
 end
