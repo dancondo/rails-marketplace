@@ -32,15 +32,21 @@
 	<div class="cells-one"><div class="fire"><%= image_tag "fire-logo.png", alt: "fire", width: 65 %></i> ÚLTIMOS ANÚNCIOS</div>
 
 </div>
-  <div class="cells">
-    <% @posts.each do |post| %>
-      <%= post.user.username %>
-      <%= post.amount %>
-      <%= post.ease %>
-      <%= post.currency.name %>
+
+<table class="table table-hover">
+  <tbody>
+    <% @posts.each_with_index do |post, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= post.user.username %></td>
+        <td><%= post.currency.name %></td>
+        <td><%= post.amount %></td>
+        <td><%= post.ease %>%</td>
+        <td><%= link_to 'Comprar', post %></td>
+      </tr>
     <% end %>
-  </div>
-</div>
+  </tbody>
+</table>
 <!--   <div class="cells-two"><div class="fire"><%= image_tag "star-logo.png", alt: "star", width: 65 %></i> TOP VENDEDORES</div></div>
 <div class="cells">One top</div>
 <div class="cells">Two top</div>
