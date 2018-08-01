@@ -10,10 +10,9 @@
 </ul>
 <%= link_to 'Cancel Order', @order,
             method: :delete,
-            data: { confirm: "Cancel this order?" } %>
-<%# if policy(@post).update? %>
-  <%#= link_to "Update", edit_post_url %>
-<%# else %>
-  <h4>Amount: <%#= @post.amount %></h4>
-  <%#= render 'orders/form', order: @order, post: @post %>
-<%# end %>
+            data: { confirm: "Cancelar essa order?" } %>
+<% if policy(@order).update? %>
+  <%= link_to 'Confirmar', @order,
+            method: :patch,
+            data: { confirm: "Essa ordem foi completa?" } %>
+<% end %>
