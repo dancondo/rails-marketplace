@@ -7,28 +7,31 @@
     <%= link_to "Vender", new_post_path, class: "btn-banner", id: "btn-vender" %>
   </div>
 </div>
-
-<div class="graphique-container">
-<div class="graphique">
-<%= image_tag "graphique0.png", alt: "graphique", width: 300 %>
-</div>
-<div class="graphique">
-<%= image_tag "graphique2.png", alt: "graphique", width: 300 %>
-</div>
-<div class="graphique">
-<%= image_tag "graphique3.png", alt: "graphique", width: 300 %>
-</div>
-<div class="graphique">
-<%= image_tag "graphique4.png", alt: "graphique", width: 300 %>
-</div>
-<div class="graphique">
-<%= image_tag "graphique1.png", alt: "graphique", width: 300 %>
-</div>
+<div class="container-fluid">
+  <div class="row graphique-container">
+    <div class="graphique">
+    <%= image_tag "graphique0.png", alt: "graphique", width: 300 %>
+    </div>
+    <div class="graphique">
+    <%= image_tag "graphique2.png", alt: "graphique", width: 300 %>
+    </div>
+    <div class="graphique">
+    <%= image_tag "graphique3.png", alt: "graphique", width: 300 %>
+    </div>
+    <div class="graphique">
+    <%= image_tag "graphique4.png", alt: "graphique", width: 300 %>
+    </div>
+    <div class="graphique">
+    <%= image_tag "graphique1.png", alt: "graphique", width: 300 %>
+    </div>
+  </div>
 </div>
 
 <div class="grid-top-last">
 
-	<div class="cells-one"><div class="fire"><%= image_tag "fire-logo.png", alt: "fire", width: 65 %></i> ÚLTIMOS ANÚNCIOS</div></div>
+	<div class="cells-one"><div class="fire"><%= image_tag "fire-logo.png", alt: "fire", width: 65 %></i> ÚLTIMOS ANÚNCIOS</div>
+
+</div>
   <div class="cells">
     <% @posts.each do |post| %>
       <%= post.user.username %>
