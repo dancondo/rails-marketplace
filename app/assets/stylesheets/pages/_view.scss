@@ -23,7 +23,7 @@
 	grid-template-columns: 1.5fr 0.6fr 0.7fr 0.7fr;
 	grid-template-rows: 100px;
 	background: $navbar;
-	
+
 }
 
 .grid-sale {
@@ -157,15 +157,17 @@
 .cells-grid-perfil-nome {
 	display: flex;
 	align-items: center;
-	justify-content: center;	
+	justify-content: center;
 }
 
 .list-inline {
 	font-size: 20px;
 }
+.grid-profil {
+  .far {
+  font-size: 40px;
+}
 
-.far {
-	font-size: 40px;
 }
 
 .fa-clock {
