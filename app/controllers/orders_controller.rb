@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.post = @post
     if @order.save
+      @post.update(amount: (@post.amount - @order.amount))
       redirect_to @order
     else
       render 'posts/show'

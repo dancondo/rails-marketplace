@@ -10,6 +10,6 @@
 <% if policy(@post).update? %>
   <%= link_to "Update", edit_post_url %>
 <% else %>
-  <%= link_to "Buy" %>
+  <h4>Amount: <%= @post.amount %></h4>
   <%= render 'orders/form', order: @order, post: @post %>
 <% end %>
