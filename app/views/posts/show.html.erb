@@ -1,3 +1,8 @@
+
+<h1><%= @post.currency.name %> (<%= link_to @post.user.username, @post.user %>)</h1>
+  <span style="color: white;">Oferta: R$<%= @post.amount %></span>
+  <span></span>
+
 <% if policy(@post).destroy? %>
 <%= link_to "Delete", @post,
 method: :delete,
@@ -5,10 +10,12 @@ data: { confirm: "Are you sure?" } %>
 <% end %>
 
 <% if policy(@post).update? %>
-<%= link_to "Update", edit_post_url %>
+  <%= link_to "Update", edit_post_url %>
 <% else %>
+  <%= render 'orders/form', order: @order, post: @post %>
+<% end %>
 
-<div class="card-container">
+<!-- <div class="card-container">
 
 	<div clas="grid-post">
 		<div class="cells-grid-post">
@@ -43,11 +50,10 @@ data: { confirm: "Are you sure?" } %>
 			<div class="cells-grid-comprar">
 				<div class="cells-grid-comprar-values"> (X BTC) >> (XX ETH) </div>
 				<div class="cells-grid-comprar-button">
-            <%= render 'orders/form', order: @order, post: @post %>
-          <% end %>
         </div>
 				<div class="cells-grid-comprar-eases"> EASE </div>
 			</div>
 		</div>
 	</div>
 </div>
+ -->
