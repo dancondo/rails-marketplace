@@ -1,7 +1,12 @@
 body {
 	background: $background;
 }
+
 .btn-basic {
   border: 1px solid $light-gray;
   border-radius: 5px;
+
+
+h3, h4 {
+  color: white;
 }
