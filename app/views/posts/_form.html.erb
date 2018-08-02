@@ -1,6 +1,7 @@
 <%= simple_form_for @post do |f| %>
   <%= f.association :currency %>
   <%= f.input :amount %>
+
   <%= f.input :price %>
   <%= f.submit class: "btn btn-light" %>
 <% end %>
