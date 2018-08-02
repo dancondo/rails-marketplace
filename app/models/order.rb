@@ -6,7 +6,7 @@ class Order < ApplicationRecord
   validates :status, inclusion: ['Pendente', 'Completa', 'Cancelada']
 
   def check_amount
-    return errors.add(:amount, "is too much") if amount > post.amount
+    return errors.add(:amount, "Quantidade ofertada inferior a sua proposta!") if amount > post.amount
   end
 
 end

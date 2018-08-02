@@ -36,11 +36,12 @@ ActiveRecord::Schema.define(version: 2018_08_02_132920) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "amount"
-    t.integer "ease"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "currency_id"
+    t.datetime "duration"
+
     t.index ["currency_id"], name: "index_posts_on_currency_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
