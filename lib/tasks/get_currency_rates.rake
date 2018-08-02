@@ -1,17 +1,20 @@
+require 'dotenv/tasks'
+
 desc "Fetch the exchange rates for cryptocurrencies"
-task :get_rates do
+task :get_currency_rates => :dotenv  do
 
   require 'open-uri'
   require 'json'
 
   base_url = "https://rest.coinapi.io/v1/exchangerate/"
-  apikey = "?apikey=#{ENV['X-CoinAPI-Key']}"
+  apikey = "?apikey=#{ENV['XCOIN']}"
   default_currency = '/BRL'
 
 
   Currency.all.each do |currency|
     code = currency.currency_code
     url = base_url + code + default_currency + apikey
+    puts url
     serialized_info = open(url).read
     info = JSON.parse(serialized_info)
     puts info["rate"]
