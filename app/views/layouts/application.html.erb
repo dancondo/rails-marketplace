@@ -21,7 +21,7 @@
       <p class="alert"><%= alert %></p>
     <% end %>
 
-    <% unless current_page?(root_path) %>
+    <% unless current_page?(root_path) || current_page?(posts_path) %>
       <div class="container">
     <% end %>
 
