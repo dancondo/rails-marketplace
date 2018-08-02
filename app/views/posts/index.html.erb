@@ -1,22 +1,10 @@
-<h1>Ofertas:</h1>
+<br>
+<h1>Ofertas ativas:</h1>
 
 
-  <ol>
-    <% @posts.each do |post| %>
-    <%= link_to post do %>
-    <li>
-      <%= post.user.username %>
-      <%= post.currency.name %>
-      <%= post.amount %>
-      <%= post.price %>
-      <%= post.currency.exchange_rate %>
-    </li>
-    <% end %>
-    <% end %>
-  </ol>
 
-  <%= link_to "new", new_post_path %>
-
+  <% link_to "new", new_post_path %>
+<br>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -37,15 +25,11 @@
         <td><%= post.currency.name %></td>
         <td><%= post.amount %></td>
         <td><%= post.price %>%</td>
-        <td><%= post.currency.exchange_rate %>%</td>
+        <td><%= post.currency.exchange_rate %></td>
         <td><%= link_to 'Comprar', post %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-
-<%= link_to new_post_path do %>
-  <button type="button" class="btn btn-light">Criar oferta</button>
-<%end%>
 
