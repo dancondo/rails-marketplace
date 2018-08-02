@@ -3,7 +3,7 @@
 <ul>
   <li>Quantidade: R$<%= @order.amount %></li>
   <li>Moeda: <%= @order.post.currency.name %></li>
-  <li>Agio: <%= @order.post.ease %>%</li>
+  <li>Agio: <%= @order.post.price %>%</li>
   <li><%= link_to 'Anuncio', @order.post %></li>
   <li><%= @order.status %></li>
 </ul>
