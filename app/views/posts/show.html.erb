@@ -1,59 +1,109 @@
+<h1> Comprar oferta</h1>
 
-<h1><%= @post.currency.name %> (<%= link_to @post.user.username, @post.user %>)</h1>
-  <span style="color: white;">Oferta: R$<%= @post.amount %></span>
-  <span></span>
-
-<% if policy(@post).destroy? %>
-<%= link_to "Delete", @post,
-method: :delete,
-data: { confirm: "Are you sure?" } %>
-<% end %>
-
-<% if policy(@post).update? %>
-  <%= link_to "Update", edit_post_url %>
-<% else %>
-  <%= render 'orders/form', order: @order, post: @post %>
-<% end %>
-
-<!-- <div class="card-container">
-
-	<div clas="grid-post">
-		<div class="cells-grid-post">
-			<div class="grid-profil">
-				<div class="cells-post-grid-profil">
-					<div class="cells-grid-perfil-nome"> nome </div>
-					<div class="cells-grid-perfil-button"><button type="button" class="btn btn-primary">Ver perfil</button></div>
-				</div>
-				<div class="cells-post-badge"><%= image_tag "medal-gold.png", alt: "star", width: 65 %></div>
-				<div class="cells-post-star-exchange">
-					<div class="cells-grid-star">
-						<div class="cells-grid-star-logo"> <i class="far fa-star"></i></div>
-						<div class="cells-grid-star-numero"> 1 </div>
-					</div>
-				</div>
-				<div class="cells-post-star-exchange">
-					<div class="cells-grid-exchange">
-						<div class="cells-grid-exchange-logo"> <i class="fas fa-sync"></i></div>
-						<div class="cells-grid-exchange-numero"> 3 </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="cells-grid-post">
-		<div class="grid-sale">
-			<div class="cells-grid-time">
-				<div class="cells-grid-time-button"><i class="far fa-clock"></i></div>
-				<div class="cells-grid-time-counter"> 1:00:59 </div>
-			</div>
-
-			<div class="cells-grid-comprar">
-				<div class="cells-grid-comprar-values"> (X BTC) >> (XX ETH) </div>
-				<div class="cells-grid-comprar-button">
-        </div>
-				<div class="cells-grid-comprar-eases"> EASE </div>
-			</div>
-		</div>
-	</div>
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <div class="show-part-container">
+      <h2><%= @post.user.username %></h2>
+    </div>
+  </div>
+  <div class="col-xs-12 col-lg-6">
+    <div class="show-part-container">
+      <h2><%= @post.user.username %></h2>
+    </div>
+  </div>
 </div>
- -->
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="show-part-container">
+      <h2>Oferta Acaba em: 01:38:58</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <div class="show-part-container">
+      <h3>Detalhes</h3>
+      <h4><%= @post.amount %><%= @post.currency.name %> >>> R$<%= @post.price %></h4>
+      <ul>
+        <li>Pancreas</li>
+        <li>Manga</li>
+        <li>Mochila</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-xs-12 col-lg-6">
+    <div class="show-part-container">
+      <h3>Detalhes</h3>
+      <h4><%= @post.amount %><%= @post.currency.name %> >>> R$<%= @post.price %></h4>
+      <ul>
+        <li>Pancreas</li>
+        <li>Manga</li>
+        <li>Mochila</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="show-part-container">
+      <div class="col-xs-12 col-lg-6">
+        <% if policy(@post).update? %>
+          <%= link_to "Update", edit_post_url %>
+        <% else %>
+          <%= render 'orders/form', order: @order, post: @post %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 style="color: white; font-size: 35px;"><%= @post.user.username %></h2>
+<div class="grid-view-post">
+        <div class="cells-post-grid-profil">
+          <div class="cells-grid-perfil-button"><button type="button" class="btn btn-outline-info">Ver perfil</button></div>
+        </div>
+        <div class="cells-post-badge"><%= image_tag "medal-gold.png", alt: "star", width: 65 %></div>
+        <div class="cells-post-star-exchange">
+          <div class="cells-grid-star">
+            <div class="cells-grid-star-logo"> <i class="far fa-star" style="color: white; font-size: 30px; margin-right: 8px;"></i></div>
+            <div class="cells-grid-star-numero" style="color: white;"> 1 </div>
+          </div>
+        </div>
+        <div class="cells-post-star-exchange">
+          <div class="cells-grid-exchange">
+            <div class="cells-grid-exchange-logo"> <i class="fas fa-sync" style="color: white; font-size: 25px; margin-right: 8px; "></i></div>
+            <div class="cells-grid-exchange-numero" style="color: white;"> 3 </div>
+          </div>
+      </div>
+</div>
+
+
+<div class="show-post-container">
+  <div>Oferta do <%= link_to @post.user.username, @post.user %></div>
+    <%= @post.amount %> <%= @post.currency.name %> >>> R$<%= @post.price %>
+  </div>
+
+<div class="show-counter-container">
+ Oferta acaba em : 01:35:58
+</div>
+
+
+<div class="show-details-container">
+  <h5>Detalhes de sua ordem</h5>
+  <ul>
+    <li>Quantidade : <%= @post.amount %></li>
+    <li>Moeda : <%= @post.currency.name %></li>
+  </ul>
+  <hr>
+  <div class="total-value">
+    Valor total : 700r$
+  </div>
+  <% if policy(@post).update? %>
+    <%= link_to "Update", edit_post_url %>
+  <% else %>
+    <%= render 'orders/form', order: @order, post: @post %>
+  <% end %>
+</div>
