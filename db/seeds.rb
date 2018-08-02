@@ -14,6 +14,11 @@ Currency.create!(name: 'Litecoin')
 Currency.create!(name: 'Bcash')
 Currency.create!(name: 'Ripple')
 
+User.create!(email: 1500, ease: 1.5, user: User.find_by(username: 'andrepinho'), currency: Currency.find_by(coin: 'Bitcoi
+
+
+
+
 Post.create!(amount: 1500, ease: 1.5, user: User.find_by(username: 'andrepinho'), currency: Currency.find_by(coin: 'Bitcoin'))
 Post.create!(amount: 3500, ease: 1, user: User.find_by(username: 'andrepinho'), currency: Currency.find_by(coin: 'Ether'))
 Post.create!(amount: 4500, ease: 1.5, user: User.find_by(username: 'andrepinho'), currency: Currency.find_by(coin: 'Litecoin'))
