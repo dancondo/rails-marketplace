@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if (post.updated_at + post.valid) >= Date.time
+    if (post.updated_at + post.duration) >= Date.time
       @post.destroy
     end
     @post.destroy
