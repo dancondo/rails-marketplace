@@ -1,4 +1,6 @@
-<h1>Ofertas:</h1>
+<br>
+<h1>Ofertas ativas:</h1>
+
 
 
   <ol>
@@ -13,16 +15,20 @@
     <% end %>
   </ol>
 
-  <%= link_to "new", new_post_path %>
 
+
+<br>
 <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">#</th>
 
       <th scope="col">Usuário</th>
-      <th scope="col">Criptomoeda</th>
+      <th scope="col">Coin</th>
       <th scope="col">Quantidade</th>
+
+      <th scope="col">Preço</th>
+      <th scope="col">Cotação</th>
 
     </tr>
   </thead>
@@ -33,14 +39,16 @@
         <td><%= post.user.username %></td>
         <td><%= post.currency.name %></td>
         <td><%= post.amount %></td>
+
         <td><%= link_to 'Comprar', post %></td>
+
+        <td><%= post.price %></td>
+        <td><%= post.currency.exchange_rate %></td>
+        <td><%= link_to 'Comprar', post, class: "btn-banner", id: "btn-comprar" %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
-
-<%= link_to new_post_path do %>
-  <button type="button" class="btn btn-light">Criar oferta</button>
-<%end%>
 

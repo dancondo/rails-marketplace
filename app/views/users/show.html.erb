@@ -9,7 +9,8 @@
   <% @user.orders.each do |o| %>
     <li>
       <%= link_to o do %>
-        Quantidade: $<%= o.amount %> | Total <%= o.amount * (100 + o.post.ease) / 100.0  %></li>
+
+        Quantidade: $<%= o.amount %> | Agil: | Total <%= o.amount  %></li>
       <% end %>
   <% end %>
 </ul>
@@ -17,7 +18,9 @@
   Suas Ordens de Venda:
   <% @user.posts.each do |post| %>
     <%= link_to post do %>
+
       <%= post.amount %> de <%= post.currency.name %>
+
     <% end %>
 
 
