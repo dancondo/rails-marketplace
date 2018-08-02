@@ -1,17 +1,64 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
-<ul>
-  <li>Quantidade: R$<%= @order.amount %></li>
-  <li>Moeda: <%= @order.post.currency.name %></li>
-  <li>Agio: <%= @order.post.ease %>%</li>
-  <li><%= link_to 'Anuncio', @order.post %></li>
-  <li><%= @order.status %></li>
-</ul>
-<%= link_to 'Cancel Order', @order,
-            method: :delete,
-            data: { confirm: "Cancelar essa order?" } %>
-<% if policy(@order).update? %>
-  <%= link_to 'Confirmar', @order,
-            method: :patch,
-            data: { confirm: "Essa ordem foi completa?" } %>
-<% end %>
+<h1> Comprar oferta</h1>
+<h2 style="color: white; font-size: 35px;"><%= @order.user.username %></h2>
+<div class="grid-view-order">
+        <div class="cells-post-grid-profil">
+          <div class="cells-grid-perfil-button"><button type="button" class="btn btn-outline-info">Ver perfil</button></div>
+        </div>
+        <div class="cells-post-badge"><%= image_tag "medal-gold.png", alt: "star", width: 65 %></div>
+        <div class="cells-post-star-exchange">
+          <div class="cells-grid-star">
+            <div class="cells-grid-star-logo"> <i class="far fa-star" style="color: white; font-size: 30px; margin-right: 8px;"></i></div>
+            <div class="cells-grid-star-numero" style="color: white;"> 1 </div>
+          </div>
+        </div>
+        <div class="cells-post-star-exchange">
+          <div class="cells-grid-exchange">
+            <div class="cells-grid-exchange-logo"> <i class="fas fa-sync" style="color: white; font-size: 25px; margin-right: 8px; "></i></div>
+            <div class="cells-grid-exchange-numero" style="color: white;"> 3 </div>
+          </div>
+      </div>
+</div>
+
+
+  <div class="show-order-container">
+  <div>Oferta do <%= @order.user.username %></div>
+  <%= @order.amount %> <%= @order.post.currency.name %> >>> 20 000 R$
+  </div>
+
+<div class="show-counter-container">
+ Oferta acaba em : 01:35:58
+  </div>
+
+
+  <div class="show-details-container">
+    <h5>Detalhes de sua ordem</h5>
+    <ul>
+      <li>Quantidade : <%= @order.amount %></li>
+      <li>Moeda : <%= @order.post.currency.name %></li>
+    </ul>  
+    <hr>
+    <div class="total-value"> Valor total : 700r$ 
+    <div class="sale-button"><button type="button" class="btn btn-outline-success"><%= link_to 'Confirmar', @order,
+    method: :patch,
+    data: { confirm: "Essa ordem foi completa?" } %> </button></p>
+    </div>
+    </div>
+    <hr>
+    <div class="order-status"> Order status : <%= @order.status %>
+    </div>
+  </div>
+
+  <div class="show-actions-container">
+
+    <button type="button" class="btn btn-outline-warning">
+    <%= link_to 'Cancelar ordem', @order,
+  method: :delete,
+  data: { confirm: "Cancelar essa order?" } %>
+  <% if policy(@order).update? %>
+  <% end %>
+  </button>
+  </div>
+  
+
+
+<!-- <li><%= link_to 'Anuncio', @order.post %></li> -->
