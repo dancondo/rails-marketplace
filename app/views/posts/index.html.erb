@@ -1,54 +1,55 @@
-<br>
-<h1>Ofertas ativas:</h1>
+<div class="container-fluid">
+  <div class="row graphique-container">
+    <div class="graphique">
+    <%= image_tag "graphique0.png", alt: "graphique", width: 300 %>
+    </div>
+    <div class="graphique">
+    <%= image_tag "graphique2.png", alt: "graphique", width: 300 %>
+    </div>
+    <div class="graphique">
+    <%= image_tag "graphique3.png", alt: "graphique", width: 300 %>
+    </div>
+    <div class="graphique">
+    <%= image_tag "graphique4.png", alt: "graphique", width: 300 %>
+    </div>
+    <div class="graphique">
+    <%= image_tag "graphique1.png", alt: "graphique", width: 300 %>
+    </div>
+  </div>
+</div>
 
+<div class="container">
+  <h1>Ofertas ativas:</h1>
 
-
-  <ol>
-    <% @posts.each do |post| %>
-    <%= link_to post do %>
-    <li>
-      <%= post.user.username %>
-      <%= post.currency.name %>
-      <%= post.amount %>
-    </li>
-    <% end %>
-    <% end %>
-  </ol>
-
-
-
-<br>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-
-      <th scope="col">Usuário</th>
-      <th scope="col">Coin</th>
-      <th scope="col">Quantidade</th>
-
-      <th scope="col">Preço</th>
-      <th scope="col">Cotação</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each_with_index do |post, index| %>
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <th scope="row"><%= index + 1 %></th>
-        <td><%= post.user.username %></td>
-        <td><%= post.currency.name %></td>
-        <td><%= post.amount %></td>
+        <th scope="col">#</th>
 
-        <td><%= link_to 'Comprar', post %></td>
+        <th scope="col">Usuário</th>
+        <th scope="col">Coin</th>
+        <th scope="col">Quantidade</th>
 
-        <td><%= post.price %></td>
-        <td><%= post.currency.exchange_rate %></td>
-        <td><%= link_to 'Comprar', post, class: "btn-banner", id: "btn-comprar" %></td>
+        <th scope="col">Preço</th>
+        <th scope="col">Cotação Cobrada</th>
 
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @posts.each_with_index do |post, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= post.user.username %></td>
+          <td><%= post.currency.name %></td>
+          <td><%= post.amount %></td>
 
+          <td><%= post.price %></td>
+          <td><%= post.price / post.amount %></td>
+          <td><%= link_to 'Comprar', post, class: "btn btn-basic btn-comprar" %></td>
 
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
