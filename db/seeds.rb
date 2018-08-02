@@ -19,10 +19,13 @@ User.create!(first_name: 'Andre', last_name: 'Pinho', cpf: '06923610737', userna
 User.create!(first_name: 'Danilo', last_name: 'Condo', cpf: '46460666881', username: 'dancondo', password: '123456', email: 'danilo@gmail.com')
 User.create!(first_name: 'Luiz', last_name: 'Lins', cpf: '45078471847', username: 'luizlins', password: '123456', email: 'luiz@gmail.com' )
 User.create!(first_name: 'Oscar', last_name: 'Bonte', cpf: '86339523005', username: 'oscarinho', password: '123qwe', email: 'oscar@gmail.com' )
+User.create!(first_name: 'Ricardo', last_name: 'da Silva', cpf: '64639474075', username: 'ricardao', password: '123456', email: 'ricardao@gmail.com' )
+User.create!(first_name: 'Vinicios', last_name: 'Mendonca', cpf: '71479858005', username: 'mendonca_vns', password: '123qwe', email: 'mendonca@gmail.com' )
 
 
-# Post.create!(amount: 1500, ease: 1.5, user: User.find_by(username: 'andrepinho'), currency: Currency.find_by(coin: 'Bitcoin'))
-# Post.create!(amount: 3500, ease: 1, user: User.find_by(username: 'andrepinho'), currency: Currency.find_by(coin: 'Ether'))
-# Post.create!(amount: 4500, ease: 1.5, user: User.find_by(username: 'andrepinho'), currency: Currency.find_by(coin: 'Litecoin'))
-# Post.create!(amount: 3500, ease: 2, user: User.find_by(username: 'andrepinho'), currency: Currency.find_by(coin: 'Bcash'))
-# Post.create!(amount: 5500, ease: 1.5, user: User.find_by(username: 'andrepinho'), currency: Currency.find_by(coin: 'Ripple'))
+User.all.each do |user|
+  rand(0..2).times do
+    random_n = rand(0 .. 3.0)
+    Post.create!(amount: random_n, price: random_n * rand(100 .. 1000), user: user, duration: rand(1..5))
+  end
+end
