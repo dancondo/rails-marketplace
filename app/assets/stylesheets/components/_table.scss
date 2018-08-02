@@ -7,14 +7,7 @@ tr {
 }
 
 .table {
-  background-color: #233142;
+  background-color: $table-color;
   border-radius: 5px;
   color:white;
-}
-
-thead tr {
-  border: 2px solid $laranja;
-}
-tbody tr:first-child {
-  border-top: 2px solid $laranja;
 }
