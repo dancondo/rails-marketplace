@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_08_02_152049) do
     t.datetime "updated_at", null: false
     t.bigint "currency_id"
     t.datetime "duration"
+
     t.index ["currency_id"], name: "index_posts_on_currency_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
