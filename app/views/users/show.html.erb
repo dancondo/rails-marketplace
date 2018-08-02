@@ -1,32 +1,42 @@
-<%= @user.email %>
-<%= @user.username %>
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.cpf %>
-<br>
-<ul>
-  Suas Ordens de Compra:
-  <% @user.orders.each do |o| %>
-    <li>
-      <%= link_to o do %>
-        Quantidade: $<%= o.amount %> | Agil: <%= o.post.ease %>% | Total <%= o.amount * (100 + o.post.ease) / 100.0  %></li>
-      <% end %>
-  <% end %>
-</ul>
-<ul>
-  Suas Ordens de Venda:
-  <% @user.posts.each do |post| %>
-    <%= link_to post do %>
-      <%= post.amount %> de <%= post.currency.name %> por <%= post.ease %>% de Agil
-    <% end %>
+<h1><%= @user.username %></h1>
+<div class="row">
 
+  <div class="col-xs-12 col-lg-7">
 
+    <h3>Informações gerais</h3>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th scope="row">Conta criada em:</th>
+            <td>20/10/2016</td>
+          </tr>
+          <tr>
+            <th scope="row">Transações concluídas:</th>
+            <td>117</td>
+          </tr>
+          <tr>
+          <th scope="row">Chave pública:</th>
+            <td>1Ck8FXs5GnynZx2Ctyc6TwUQdNydturZRZ</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  </div>
 
-    <% post.orders.each do |post_order| %>
-    <li>
-      <%= link_to post_order do %>
-        Quantidade: $<%= post_order.amount %> | Agil: <%= post_order.post.ease %>% | Total <%= post_order.amount * (100 + post_order.post.ease) / 100.0  %></li>
-      <% end %>
-    <% end %>
-  <% end %>
-</ul>
+  <div class="col-xs-12 col-lg-5">
+    <h3>Reputação</h3>
+    <div class="reputacao-info">
+      <h4 class='reputation1'><i class="far fa-thumbs-up fa-2x"></i> Avaliações positivas: 32</h4>
+      <h4 class='reputation2'><i class="fas fa-ban fa-2x"></i> Bloqueado por: 2</h4>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <h3>Minhas ofertas</h3>
+  </div>
+
+  <div class="col-xs-12">
+    <h3>Comentários sobre o usuário</h3>
+  </div>
+</div>
