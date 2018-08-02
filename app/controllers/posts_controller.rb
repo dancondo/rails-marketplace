@@ -40,9 +40,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if (post.updated_at + post.valid) >= Date.time
-      @post.destroy
-    end
     @post.destroy
     redirect_to posts_path
   end
