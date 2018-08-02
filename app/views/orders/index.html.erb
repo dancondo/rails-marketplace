@@ -1,2 +1,33 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<br>
+<h1>Histórico de ordens de venda</h1>
+
+
+
+<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+
+      <th scope="col">Coin</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each_with_index do |order, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= order.post.currency.name %></td>
+        <td><%= order.amount %></td>
+        <td><%= order.post.price %></td>
+        <td><%= order.status %></td>
+        <td><%= link_to 'Home', root, class: "btn-banner", id: "btn-comprar" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
