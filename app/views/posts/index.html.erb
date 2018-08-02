@@ -8,7 +8,8 @@
       <%= post.user.username %>
       <%= post.currency.name %>
       <%= post.amount %>
-      <%= post.ease %>
+      <%= post.price %>
+      <%= post.currency.exchange_rate %>
     </li>
     <% end %>
     <% end %>
@@ -22,10 +23,10 @@
       <th scope="col">#</th>
 
       <th scope="col">Usuário</th>
-      <th scope="col">Criptomoeda</th>
+      <th scope="col">Coin</th>
       <th scope="col">Quantidade</th>
-      <th scope="col">Ágio</th>
-
+      <th scope="col">Preço</th>
+      <th scope="col">Cotação</th>
     </tr>
   </thead>
   <tbody>
@@ -35,7 +36,8 @@
         <td><%= post.user.username %></td>
         <td><%= post.currency.name %></td>
         <td><%= post.amount %></td>
-        <td><%= post.ease %>%</td>
+        <td><%= post.price %>%</td>
+        <td><%= post.currency.exchange_rate %>%</td>
         <td><%= link_to 'Comprar', post %></td>
       </tr>
     <% end %>
