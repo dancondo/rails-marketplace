@@ -3,7 +3,7 @@
 
 
 
-  <% link_to "new", new_post_path %>
+
 <br>
 <table class="table table-hover">
   <thead>
@@ -24,9 +24,9 @@
         <td><%= post.user.username %></td>
         <td><%= post.currency.name %></td>
         <td><%= post.amount %></td>
-        <td><%= post.price %>%</td>
+        <td><%= post.price %></td>
         <td><%= post.currency.exchange_rate %></td>
-        <td><%= link_to 'Comprar', post %></td>
+        <td><%= link_to 'Comprar', post, class: "btn-banner", id: "btn-comprar" %></td>
       </tr>
     <% end %>
   </tbody>
