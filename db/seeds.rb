@@ -1,3 +1,4 @@
+Order.destroy_all
 Post.destroy_all
 Currency.destroy_all
 User.destroy_all
@@ -16,15 +17,15 @@ User.create!(first_name: 'Ricardo', last_name: 'da Silva', cpf: '64639474075', u
 User.create!(first_name: 'Vinicios', last_name: 'Mendonca', cpf: '71479858005', username: 'mendonca_vns', password: '123qwe', email: 'mendonca@gmail.com' )
 
 
-
+data = Time.now + 5.hour
 User.all.each do |user|
   random_n = rand(0 .. 3.0)
-  Post.create!(amount: random_n, price: random_n * rand(100 .. 1000), user: user, duration: rand(1..5), currency: Currency.all.sample)
+  Post.create!(amount: random_n, price: random_n * rand(100 .. 1000), user: user, duration: data, currency: Currency.all.sample)
 end
 
 Post.all.each do |post|
   rand(0..2).times do
     one_user = User.all.sample
-    Order.create!(amount: rand(0.1 .. post.amount), post: post, user: one_user)
+    Order.create!(amount: rand(0.1 .. post.amount), post: post, user: one_user, publickey: %w[df87r1sg1348  grth7srg4646 htyun15f4e6rg srheytj6e546r ryuiov6ef4b].sample)
   end
 end
