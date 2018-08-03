@@ -1,3 +1,4 @@
+Order.destroy_all
 Post.destroy_all
 Currency.destroy_all
 User.destroy_all
