@@ -14,7 +14,7 @@
         <p class="text-left">Moeda : <%= @order.post.currency.name %></p>
         <p class="text-left">Quantidade : <%= @order.post.amount %></p>
         <p class="text-left">Preço Total : R$<%= @order.post.price %></p>
-        <p class="text-left-chave">Chave de recebimento : @order.post.</p>
+        <p class="text-left-chave">Chave de recebimento : <%= @order.user.public_key %></p>
         <hr>
         <p class="text-left">Cotação : $<span id="rate"><%= @order.post.price / @order.post.amount %></span> / 1</p>
         <hr>
@@ -28,7 +28,7 @@
       <div class="show-part-container">
         <div class="sale-button"><button type="button" class="btn btn-outline-success"><%= link_to 'Confirmar', @order,
         method: :patch,
-        data: { confirm: "Essa ordem foi completa?" } %> </button></p> 
+        data: { confirm: "Essa ordem foi completa?" } %> </button></p>
       </div>
 
       <button type="button" class="btn btn-outline-warning">
