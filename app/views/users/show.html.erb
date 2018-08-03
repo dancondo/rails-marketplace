@@ -63,3 +63,77 @@
     </div>
   </div>
 </div>
+
+<% if policy(current_user).view?(current_user, @user) %>
+
+  <div class='row'>
+    <div class="col-sm-12">
+      <h3>Minhas Vendas</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Criptomoeda</th>
+              <th scope="col">Quantidade</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Cotação</th>
+              <th scope="col">Status</th>
+              <th scope="col">Ver</th>
+            </tr>
+          </thead>
+            <% @user.posts.each_with_index do |post, index| %>
+              <% post.orders.each_with_index do |order, index_order| %>
+              <tbody>
+                <tr>
+                  <th scope="row"><%= index + index_order + 1 %></th>
+                  <td><%= order.post.currency.name %></td>
+                  <td><%= order.amount %></td>
+                  <td><%= order.post.price %></td>
+                  <td><%= order.post.price / order.amount %></td>
+                  <td><%= order.status %></td>
+                  <td><%= link_to 'Ver', order %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class="col-sm-12">
+      <h3>Minhas Compras</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Criptomoeda</th>
+              <th scope="col">Quantidade</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Cotação</th>
+              <th scope="col">Status</th>
+              <th scope="col">Ver</th>
+            </tr>
+          </thead>
+            <% @user.orders.each_with_index do |order, index| %>
+            <tbody>
+              <tr>
+                <th scope="row"><%= index + 1 %></th>
+                <td><%= order.post.currency.name %></td>
+                <td><%= order.amount %></td>
+                <td><%= order.post.price %></td>
+                <td><%= order.post.price / order.amount %></td>
+                <td><%= order.status %></td>
+                <td><%= link_to 'Ver', order %></td>
+              </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<% end %>
