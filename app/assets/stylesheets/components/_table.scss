@@ -2,12 +2,14 @@ th {
   color: $laranja;
 }
 
-tr {
-  border: 2px solid white;
+tr { 
+	border: none !important
+
 }
 
 .table {
   background-color: $table-color;
   border-radius: 5px;
   color:white;
+  box-shadow: 0 8px 6px -6px black;
 }
