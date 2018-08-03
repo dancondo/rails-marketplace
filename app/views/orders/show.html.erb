@@ -1,25 +1,45 @@
-
-    <div class="sale-button"><button type="button" class="btn btn-outline-success"><%= link_to 'Confirmar', @order,
-    method: :patch,
-    data: { confirm: "Essa ordem foi completa?" } %> </button></p>
-    </div>
-    </div>
-    <hr>
-    <div class="order-status"> Order status : <%= @order.status %>
+<div class="show-actions-container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 offset-3">
+      <div class="show-part-container">
+        <h3>Sua ordem</h3>
+        <p class="ordem-text"><%=@order.post.amount%> <%=@order.post.currency.name%> = <%=@order.post.price%> R$ </p>
+      </div>
     </div>
   </div>
-
-  <div class="show-actions-container">
-
-    <button type="button" class="btn btn-outline-warning">
-    <%= link_to 'Cancelar ordem', @order,
-  method: :delete,
-  data: { confirm: "Cancelar essa order?" } %>
-  <% if policy(@order).update? %>
-  <% end %>
-  </button>
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 offset-3">
+      <div class="show-part-container">
+        <h3>Detalhes</h3>
+        <p class="text-left">Moeda : <%= @order.post.currency.name %></p>
+        <p class="text-left">Quantidade : <%= @order.post.amount %></p>
+        <p class="text-left">Preço Total : R$<%= @order.post.price %></p>
+        <hr>
+        <p class="text-left">Cotação : $<span id="rate"><%= @order.post.price / @order.post.amount %></span> / 1</p>
+        <hr>
+        <div class="order-status"> Order status : <%= @order.status %>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 offset-3">
+      <div class="show-part-container">
+        <div class="sale-button"><button type="button" class="btn btn-outline-success"><%= link_to 'Confirmar', @order,
+        method: :patch,
+        data: { confirm: "Essa ordem foi completa?" } %> </button></p> 
+      </div>
 
-
+      <button type="button" class="btn btn-outline-warning">
+        <%= link_to 'Cancelar ordem', @order,
+        method: :delete,
+        data: { confirm: "Cancelar essa order?" } %>
+        <% if policy(@order).update? %>
+        <% end %>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
 
 <!-- <li><%= link_to 'Anuncio', @order.post %></li> -->
