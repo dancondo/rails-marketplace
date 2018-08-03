@@ -1,3 +1,7 @@
+.navbar {
+  background-color: $navbar;
+}
+
 .nav-link i {
   color: $laranja;
 }
@@ -13,6 +17,7 @@ li {
 }
 
 .navbar-brand {
+  color: white;
   border-right: 2px solid white;
   margin: 0;
   padding-right: 10px;
