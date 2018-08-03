@@ -1,6 +1,6 @@
 <%= simple_form_for [@post, @order] do |f| %>
   <label class = 'text-left' style="color: white;" >Chave de Recebimento</label><br>
   <input class="form-control" type="password">
-  <%= f.input :amount%>
+  <%= f.input :amount, input_html: { id: 'desired_amount'}%>
   <%= f.submit class: 'btn-comprar btn btn-block'%>
 <% end %>
