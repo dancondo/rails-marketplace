@@ -14,6 +14,7 @@
         <p class="text-left">Moeda : <%= @order.post.currency.name %></p>
         <p class="text-left">Quantidade : <%= @order.post.amount %></p>
         <p class="text-left">Preço Total : R$<%= @order.post.price %></p>
+        <p class="text-left-chave">Chave de recebimento : @order.post.</p>
         <hr>
         <p class="text-left">Cotação : $<span id="rate"><%= @order.post.price / @order.post.amount %></span> / 1</p>
         <hr>
