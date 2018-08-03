@@ -2,28 +2,29 @@
   <div class="row graphique-container">
     <div class="graphique">
       <%= image_tag "graphique-bitcoin.png", alt: "graphique", width: 300 %>
-      <div class="title-crypto">BTC/R$ : <%= @currencies %></div>
+      <div class="title-crypto">BTC/R$ : <%= @currencies.find_by(currency_code: 'BTC').exchange_rate %></div>
     </div>
     <div class="graphique">
       <%= image_tag "graphique-ethereum.png", alt: "graphique", width: 300 %>
-      <div class="title-crypto">ETH/R$ : <%= @currencies %></div>
+      <div class="title-crypto">ETH/R$ : <%= @currencies.find_by(currency_code: 'ETH').exchange_rate %></div>
     </div>
     <div class="graphique">
       <%= image_tag "graphique-ripple.png", alt: "graphique", width: 300 %>
-      <div class="title-crypto">XRP/R$ : <%= @currencies %></div>
+      <div class="title-crypto">XRP/R$ : <%= @currencies.find_by(currency_code: 'XRP').exchange_rate %></div>
     </div>
     <div class="graphique">
       <div class="graphique-dash">
         <%= image_tag "graphique-dash.png", alt: "graphique", width: 300 %>
-        <div class="title-crypto">Dash/R$ : <%= @currencies %> </div>
+        <div class="title-crypto">DASH/R$ : <%= @currencies.find_by(currency_code: 'DASH').exchange_rate %></div>
       </div>
     </div>
     <div class="graphique">
       <%= image_tag "graphique-litecoin.png", alt: "graphique", width: 300 %>
-      <div class="title-crypto">LTC/R$ : <%= @currencies %></div>
+      <div class="title-crypto">LTC/R$ : <%= @currencies.find_by(currency_code: 'LTC').exchange_rate %></div>
     </div>
   </div>
 </div>
+
 
 <div class="container" id="container-posts-index">
   <h1>Ofertas ativas:</h1>
