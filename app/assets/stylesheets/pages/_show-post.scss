@@ -22,84 +22,12 @@ h5 {
     list-style: none;
   }
 }
-
-
-.show-counter-container {
-  background-color: #233142;
-  border-radius: 5px;
-  color:white;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  width: 40%;
-  margin-top: 16px;
-  text-align: center;
-  font-size: 20px;
-  box-shadow: 0 8px 6px -6px black;
+.square {
+  margin: auto;
+  height: 100%;
+  padding-top: 10%;
 }
-
-.show-post-container {
-  background-color: #233142;
-  border-radius: 5px;
-  color:white;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  justify-content: center;
-  width: 40%;
-  text-align: center;
-  font-size: 20px;
-  margin-top: 16px;
-  font-weight: bold;
-  font-family: $headers-font;
-  box-shadow: 0 8px 6px -6px black;
-}
-
-.show-details-container {
-  background-color: #233142;
-  border-radius: 5px;
-  color:white;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  width: 40%;
-  margin-top: 16px;
-  font-size: 16px;
-  box-shadow: 0 8px 6px -6px black;
-}
-
-.total-value {
-	font-size: 20px;
-	color: $laranja;
-	text-align: center;
-}
-
-.post-status {
-	color: #b5aaaa;
-}
-
-.show-actions-container {
-	margin-top: 24px;
-}
-
-.sale-button {
-	margin-top: 8px;
-}
-
-.grid-profil {
-	width: 40%;
-	border-radius: 5px;
-	box-shadow: 0 8px 6px -6px black;
-}
-
-.grid-view-post {
-	display: grid;
-	grid-template-columns: 1.5fr 0.7fr 0.7fr 0.7fr;
-	background: $navbar;
-    width: 40%;
-	border-radius: 5px;
-	box-shadow: 0 8px 6px -6px black;
-}
-
-h2 {
-	margin-top: 32px;
-	margin-bottom: 8px;
+#total-value {
+  font-size: 50px;
+  color: $laranja;
 }

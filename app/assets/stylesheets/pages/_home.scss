@@ -59,14 +59,36 @@ h1 {
 .graphique {
 	padding-left: 8px;
 	padding-right: 8px;
-  margin-bottom: 16px;
+    margin-top: 8px;
 	height: 183px;
+	position: relative;
 	box-shadow: 0 8px 6px -6px black;
+	
 }
 .table-home {
   margin-bottom: 80px;
   border: none !important;
-  tr {
+
+tr {
     border: none !important;
   }
 }
+
+.title-crypto {
+	color: white;
+	background-color: #233142;
+	border-radius: 5px;
+	margin-top: 16px;
+	width: 95%;
+	position: absolute;
+	top: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	opacity: 0.8;
+	box-shadow: 0 8px 6px -6px black;
+}
+
+
+
+
