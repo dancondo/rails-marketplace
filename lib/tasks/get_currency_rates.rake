@@ -1,4 +1,4 @@
-# require 'dotenv/tasks'
+require 'dotenv/tasks'
 
 desc "Fetch the exchange rates for cryptocurrencies"
 task :get_currency_rates => :dotenv  do
@@ -15,7 +15,6 @@ task :get_currency_rates => :dotenv  do
   Currency.all.each do |currency|
     code = currency.currency_code
     url = base_url + code + default_currency + apikey
-    puts url
     serialized_info = open(url).read
     info = JSON.parse(serialized_info)
     puts info["rate"]
