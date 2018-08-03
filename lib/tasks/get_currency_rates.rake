@@ -1,7 +1,8 @@
-require 'dotenv/tasks'
+# require 'dotenv/tasks'
 
 desc "Fetch the exchange rates for cryptocurrencies"
 task :get_currency_rates => :dotenv  do
+# task :get_currency_rates do
 
   require 'open-uri'
   require 'json'
