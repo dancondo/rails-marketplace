@@ -16,7 +16,13 @@
 <div class="row">
   <div class="col-sm-12">
     <div class="show-part-container">
-      <h2>Oferta Acaba em: 01:38:58</h2>
+      <h2>Oferta Acaba em:
+        <% if policy(current_user).view?(current_user, @post.user) %>
+          <div class="values"></div>
+        <% else %>
+          <div class="values2"></div>
+        <% end %>
+      </h2>
     </div>
   </div>
 </div>

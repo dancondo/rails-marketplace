@@ -47,7 +47,7 @@ class PostsController < ApplicationController
     private
 
   def post_params
-    params.require(:post).permit(:amount, :currency_id, :ease, :user_id)
+    params.require(:post).permit(:amount, :currency_id, :user_id, :duration, :price)
   end
 
   def set_post
