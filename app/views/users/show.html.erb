@@ -1,4 +1,4 @@
-<h1>Usuário: <%= @user.username %></h1>
+<h1 id="nome-usuario">Usuário: <%= @user.username %></h1>
 <div class="row">
   <div class="col-xs-12 col-lg-7">
 
@@ -29,8 +29,9 @@
       <h4 class='reputation2'><i class="fas fa-ban fa-2x"></i> Bloqueado por: 2</h4>
     </div>
   </div>
-
-  <div class="col-xs-12">
+</div>
+<div class='row'>
+  <div class="col-sm-12">
     <h3>Minhas ofertas</h3>
     <table class="table table-responsive">
       <thead>
@@ -44,21 +45,19 @@
           <th scope="col">Ágio</th>
         </tr>
       </thead>
-      <% @user.posts.each_with_index do |post, index| %>
-      <tbody>
-        <tr>
-          <th scope="row"><%= index + 1 %></th>
-          <td><%= post.currency.name %></td>
-          <td><%= post.amount %></td>
-          <td><%= post.price %></td>
-          <td><%= post.currency.exchange_rate %></td>
-          <td><%= post.price / post.amount %></td>
-          <td><%= (post.price / post.amount - post.currency.exchange_rate) / post.currency.exchange_rate %></td>
-        </tr>
-      <%end%>
-  </div>
-
-  <div class="col-xs-12">
-    <h3>Comentários sobre o usuário</h3>
+        <% @user.posts.each_with_index do |post, index| %>
+        <tbody>
+          <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td><%= post.currency.name %></td>
+            <td><%= post.amount %></td>
+            <td><%= post.price %></td>
+            <td><%= post.currency.exchange_rate %></td>
+            <td><%= post.price / post.amount %></td>
+            <td><%= (post.price / post.amount - post.currency.exchange_rate) / post.currency.exchange_rate %></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
   </div>
 </div>

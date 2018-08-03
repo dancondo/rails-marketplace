@@ -1,7 +1,3 @@
-h1 {
-  border-bottom: 2px solid lightgray;
-}
-
 h4 {
   color: $laranja;
 }
@@ -27,4 +23,8 @@ h4.reputation2 {
   h4 {
     font-size: inherit;
   }
+}
+
+#nome-usuario {
+  border-bottom: 2px solid lightgray;
 }
