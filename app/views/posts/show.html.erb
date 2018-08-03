@@ -3,12 +3,12 @@
 <div class="row">
   <div class="col-xs-12 col-lg-6">
     <div class="show-part-container">
-      <h2><%= link_to @post.user.username, @post.user.username %></h2>
+      <h2><%= link_to @post.user.username, user_path(@post.user) %></h2>
     </div>
   </div>
   <div class="col-xs-12 col-lg-6">
     <div class="show-part-container">
-      <h2>Verificado!</h2>
+      <h2>Quant. Transacoes</h2>
     </div>
   </div>
 </div>
@@ -27,8 +27,8 @@
       <h3>Detalhes</h3>
       <h5 class="text-left">Moeda: <%= @post.currency.name %></h5>
       <h5 class="text-left">Quantidade: <%= @post.amount %></h5>
-      <h5 class="text-left">Preco Total: R$<%= @post.price %></h5>
-      <h5 class="text-left">Cambio: $<span id="rate"><%= @post.price / @post.amount %></span> / 1</h5>
+      <h5 class="text-left">Preço Total: R$<%= @post.price %></h5>
+      <h5 class="text-left">Cotação: $<span id="rate"><%= @post.price / @post.amount %></span> / 1</h5>
     </div>
   </div>
   <div class="col-xs-12 col-lg-6">
@@ -36,8 +36,8 @@
       <h3>Taxas do Mercado</h3>
       <h5 class="text-left">Moeda: <%= @post.currency.name %></h5>
       <h5 class="text-left">Ofertas Totais: 10</h5>
-      <h5 class="text-left">Preco Pela Quantia: R$<%= @post.amount * @post.currency.exchange_rate %></h5>
-      <h5 class="text-left">Cambio: $<%= @post.currency.exchange_rate %> / 1</h5>
+      <h5 class="text-left">Preço Pela Quantia: R$<%= @post.amount * @post.currency.exchange_rate %></h5>
+      <h5 class="text-left">Cotação: $<span  id="market_rate"><%= @post.currency.exchange_rate %></span> / 1</h5>
     </div>
   </div>
 </div>

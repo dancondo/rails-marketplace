@@ -1,7 +1,6 @@
 <%= simple_form_for @post do |f| %>
-  <%= f.association :currency %>
-  <%= f.input :amount %>
-
-  <%= f.input :price %>
-  <%= f.submit class: "btn btn-light" %>
+  <%= f.association :currency, label: 'Moeda' %>
+  <%= f.input :amount, label: 'Quantidade de Moedas' %>
+  <%= f.input :price, label: 'Preço em Reais R$' %>
+  <%= f.submit 'Criar oferta', class: "btn btn-light" %>
 <% end %>

@@ -11,25 +11,25 @@
   <div class="row graphique-container">
     <div class="graphique">
       <%= image_tag "graphique-bitcoin.png", alt: "graphique", width: 300 %>
-      <div class="title-crypto">BTC/R$ : <%= @currencies %></div>
+      <div class="title-crypto">BTC/R$ : <%= @currencies.find_by(currency_code: 'BTC').exchange_rate %></div>
     </div>
     <div class="graphique">
       <%= image_tag "graphique-ethereum.png", alt: "graphique", width: 300 %>
-      <div class="title-crypto">ETH/R$ : <%= @currencies %></div>
+      <div class="title-crypto">ETH/R$ : <%= @currencies.find_by(currency_code: 'ETH').exchange_rate %></div>
     </div>
     <div class="graphique">
       <%= image_tag "graphique-ripple.png", alt: "graphique", width: 300 %>
-      <div class="title-crypto">XRP/R$ : <%= @currencies %></div>
+      <div class="title-crypto">XRP/R$ : <%= @currencies.find_by(currency_code: 'XRP').exchange_rate %></div>
     </div>
     <div class="graphique">
-      <div class="graphique-dash"> 
+      <div class="graphique-dash">
         <%= image_tag "graphique-dash.png", alt: "graphique", width: 300 %>
-        <div class="title-crypto">Dash/R$ : <%= @currencies %> </div>
-      </div> 
+        <div class="title-crypto">DASH/R$ : <%= @currencies.find_by(currency_code: 'DASH').exchange_rate %></div>
+      </div>
     </div>
     <div class="graphique">
       <%= image_tag "graphique-litecoin.png", alt: "graphique", width: 300 %>
-      <div class="title-crypto">LTC/R$ : <%= @currencies %></div>
+      <div class="title-crypto">LTC/R$ : <%= @currencies.find_by(currency_code: 'LTC').exchange_rate %></div>
     </div>
   </div>
 </div>
@@ -39,11 +39,20 @@
   <h3 class="cells-one">ÚLTIMOS ANÚNCIOS</h3>
 
   <table class="table table-hover table-home">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Usuario</th>
+        <th>Cambio</th>
+        <th>Quantidade</th>
+        <th>Comprar?</th>
+      </tr>
+    </thead>
     <tbody>
       <% @posts.each_with_index do |post, index| %>
       <tr>
         <th scope="row"><%= index + 1 %></th>
-        <td><%= post.user.username %></td>
+        <td><%= link_to post.user.username, post.user %></td>
         <td><%= post.currency.name %></td>
         <td><%= post.amount %></td>
         <td><%= link_to 'Comprar', post %></td>
